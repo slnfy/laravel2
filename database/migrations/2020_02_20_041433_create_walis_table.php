@@ -16,9 +16,9 @@ class CreateWalisTable extends Migration
         Schema::create('walis', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nama');
-            $table->string('id_mahasiswa');
-            $table->unsignedBigInteger('id_dosen');
+            $table->unsignedBigInteger('id_mahasiswa');
             $table->foreign('id_mahasiswa')->references('id')->on('mahasiswas')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 

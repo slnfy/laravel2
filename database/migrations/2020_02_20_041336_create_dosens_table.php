@@ -17,6 +17,7 @@ class CreateDosensTable extends Migration
             $table->bigIncrements('id');
             $table->string('nama');
             $table->string('nipd');
+            $table->timestamps();
         });
     }
 
