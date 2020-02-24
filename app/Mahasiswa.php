@@ -10,7 +10,7 @@ class Mahasiswa extends Model
     public $timestamps = true;
 
     public function dosen(){
-        return $this->hasMany('App\Dosen','id_dosen');
+        return $this->belongsTo('App\Dosen','id_dosen');
     }
 
     public function wali(){
