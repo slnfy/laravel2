@@ -108,6 +108,25 @@ Route::get('eloquent2',function()
 });
 
 
+Auth::routes();
 
+Route::get('/home', 'HomeController@index')->name('home');
 
+//balde template
+Route::get('beranda',function()
+{
+    return view('beranda');
+});
 
+Route::get('tentang',function()
+{
+    return view('tentang');
+});
+
+Route::get('kontak',function()
+{
+    return view('kontak');
+});
+
+//crudd
+Route::resource('dosen','DosenController');
