@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class DosenController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     public function index()
     {
@@ -55,7 +59,7 @@ class DosenController extends Controller
     }
 
 
-    public function destroy(Dosen $dosen)
+    public function destroy($id)
     {
         $dosen = Dosen::findOrFail($id)->delete();
         return redirect()->route('dosen.index')->with(['massage'=>'Dosen Berhasil Dihapus']);
