@@ -130,3 +130,5 @@ Route::get('kontak',function()
 
 //crudd
 Route::resource('dosen','DosenController');
+Route::resource('hobi','HobiController');
+Route::resource('mahasiswa','MahasiswaController');

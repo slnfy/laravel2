@@ -5,22 +5,18 @@
         <div class="col-md-10">
             <div class="card">
                 <div class="card-header">
-                    Tambah Data Dosen
+                    Tambah Data Hobi
                 </div>
                 <div class="card-body">
-                <form action="{{route('dosen.store')}}" method="post">
+                <form action="{{route('hobi.store')}}" method="post">
                    @csrf
                    <div class="form-group">
-                       <label for="">Nama Dosen</label>
-                       <input type="text" name="nama" class="form-control" required>
-                   </div>
-                   <div class="form-group">
-                       <label for="">Nomor Induk Pegawai</label>
-                       <input type="text" name="nipd" class="form-control" required>
-                   </div>
-                   <div class="form-group">
+                       <label for="">Nama Hobi</label>
+                       <input type="text" name="hobi" class="form-control" required></div>
+                       <div class="form-group">
                        <button type="submit" class="btn btn-primary">Simpan</button>
                       </div>
+                   </div>
                    </form>
                 </div>
             </div>
