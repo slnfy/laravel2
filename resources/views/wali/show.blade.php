@@ -5,21 +5,17 @@
         <div class="col-md-10">
             <div class="card">
                 <div class="card-header">
-                    Tambah Data mahasiswa
+                    Tambah Data wali
                 </div>
                 <div class="card-body">
                     @csrf
                     <div class="form-group">
-                        <label for="">Nama Mahasiswa</label>
-                    <input type="text" name="nama" value="{{$mhs->nama}}" class="form-control" readonly>
+                        <label for="">wali Mahasiswa</label>
+                    <input type="text" name="nama" value="{{$wali->nama}}" class="form-control" readonly>
                     </div>
                     <div class="form-group">
-                        <label for="">NIM</label>
-                    <input type="text" name="nim" value="{{$mhs->nim}}" class="form-control" readonly>
-                    </div>
-                    <div class="form-group">
-                        <label for="">Nama Dosen</label>
-                    <input type="text" name="id_dosen" value="{{$mhs->dosen->nama}}" class="form-control" readonly>
+                        <label for="">Nama mahasiswa</label>
+                    <input type="text" name="id_mahasiswa" value="{{$wali->mahasiswa->nama}}" class="form-control" readonly>
                     </div>
                     <div class="form-group">
                     <a href="{{url()->previous()}}" class="btn btn-primary">Kembali</a>

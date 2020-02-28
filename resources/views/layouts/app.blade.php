@@ -45,6 +45,18 @@
                             <a href="{{route('hobi.index')}}" class="nav-link">Hobi</a>
                             </li>
                         @endguest
+                        @guest
+                            @else
+                            <li class="nav-item">
+                            <a href="{{route('mahasiswa.index')}}" class="nav-link">Mahasiswa</a>
+                            </li>
+                        @endguest
+                        @guest
+                            @else
+                            <li class="nav-item">
+                            <a href="{{route('wali.index')}}" class="nav-link">Wali</a>
+                            </li>
+                        @endguest
 
                     </ul>
 

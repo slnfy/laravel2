@@ -8,6 +8,10 @@ use App\Dosen;
 
 class MahasiswaController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     public function index()
     {
@@ -37,15 +41,16 @@ class MahasiswaController extends Controller
         return view('mahasiswa.show',compact('mhs'));
     }
 
-    public function edit($edit)
+    public function edit($id)
     {
+        $dosen = Dosen::all();
         $mhs = Mahasiswa::findOrFail($id);
-        return view('mahasiswa.edit',compact('mhs'));
+        return view('mahasiswa.edit',compact('mhs','dosen'));
     }
 
-    public function update(Request $request, Mahasiswa $id)
+    public function update(Request $request,  $id)
     {
-        $mhs = Mahasiwa::findOrFail();
+        $mhs = Mahasiswa::findOrFail($id);
         $mhs->nama = $request->nama;
         $mhs->nim = $request->nim;
         $mhs->id_dosen = $request->id_dosen;
@@ -53,7 +58,7 @@ class MahasiswaController extends Controller
         return redirect()->route('mahasiswa.index')->with(['message'=>'Data Berhasil Dibuat']);
     }
 
-    public function destroy(Mahasiswa $mahasiswa)
+    public function destroy($id)
     {
         $mhs = Mahasiswa::findOrFail($id)->delete();
         return redirect()->route('mahasiswa.index')->with(['message'=>'Data Berhasil Dihapus']);
